@@ -17,8 +17,9 @@ public class Tenedores implements Runnable {
 
     }
 
-//Acá ocupa proceso de tenedor derecho e izquierdo
-    public void Cuando_come() {
+    //Acá ocupa proceso de tenedor derecho e izquierdo
+    public void Proceso1() {
+        //Proceso1=COMER
         // Se cambia los estodos del tenedore derecho y del tenedor izquierdo
         lado_der.setText("Ocupado");
         lado_izq.setText("Ocupado");
@@ -32,18 +33,17 @@ public class Tenedores implements Runnable {
         //Cuando dejan de comer ya estan disponibles los tenedores
         lado_der.setText("Disponible");
         lado_izq.setText("Disponible");
-        System.out.println("Posición:" + (PosicionFiloso + 1) + "Pentando");
+        System.out.println("Posición:" + (PosicionFiloso + 1) + "Pensando");
     }
 
-
-    public void Cuando_piensa() {
+    public void Proceso2() {
+        //Proceso2 = PENSAR
         //Cuando piensa los tenedores estan libres
         lado_der.setText("Disponible");
         lado_izq.setText("Disponible");
         //Tiempo pensando
         try {
-
-            Thread.sleep(5000);
+             Thread.sleep(5000);
         } catch (InterruptedException e) {
         }
     }

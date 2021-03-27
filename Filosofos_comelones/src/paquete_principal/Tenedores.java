@@ -15,15 +15,4 @@ import javax.swing.JLabel;
  */
 public class Tenedores {
     
-    //Arreglo de Tenedores 
-    JLabel tenedor[];
-    tenedor = new JLabel[5];
-    tenedor[0] = Tenedor1;
-    tenedor[1] = Tenedor2;
-    tenedor[2] = Tenedor3:
-    tenedor[3] = Tenedor4;
-    tenedor[4] = Tenedor 5;
-    
-    
-    
 }

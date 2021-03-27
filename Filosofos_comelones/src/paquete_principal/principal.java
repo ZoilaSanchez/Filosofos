@@ -1,5 +1,6 @@
 package paquete_principal;
 
+import Filosofo.Tenedores;
 import javax.swing.JLabel;
 
 
@@ -14,7 +15,13 @@ import javax.swing.JLabel;
  * @author Lopez
  */
 public class principal extends javax.swing.JFrame {
-
+    //Declarar arreglo
+    JLabel tenedor[];
+    //variables: 
+    int pos_filo, lado_izq=0, lado_der = 0;
+    Tenedores tenedor2;
+    
+    
     /**
      * Creates new form principal
      */
@@ -110,15 +117,29 @@ public class principal extends javax.swing.JFrame {
     //Agregar arreglos de los filosofos 
     
     //Arreglo de Tenedores 
-    JLabel tenedor[];
     tenedor = new JLabel[5];
     tenedor[0] = Tenedor1;
     tenedor[1] = Tenedor2;
     tenedor[2] = Tenedor3;
     tenedor[3] = Tenedor4;
     tenedor[4] = Tenedor5;
-    
+ 
     //ver el que tenedor estamos utilizando
+    for(pos_filo = 0; pos_filo < 5; pos_filo = pos_filo + 1){
+        
+        // la posicion para el tenedor izquierdo seria la posicion del filosofo -1
+        lado_izq = pos_filo -1;
+        //Cuando la posicion de filosofo es la primera
+        if(lado_izq <0){
+            //Seria la ultima posición de tenedores 
+            lado_izq = 4;
+        }
+        //en este caso la posicion de su tenedor es el que sigue (derecho) 
+        lado_der = pos_filo;
+        
+        //Mandamos la posicion, si esta en el lado derecho o izquierdo 
+        tenedor2= new Tenedores(pos_filo, tenedor[lado_izq], tenedor[lado_izq]);
+    }
     }//GEN-LAST:event_IniciarTActionPerformed
     
     

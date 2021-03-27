@@ -2,16 +2,24 @@ package Filosofo;
 
 import javax.swing.JLabel;
 
+//hilo para los tenedores
 public class Tenedores implements Runnable {
-
+    //declaramos las variables, del hijo y de los lados a los que 
+    //se toma el tenedor
     int PosicionFiloso, res;
     Thread Hilo_tenedor;
     JLabel lado_der, lado_izq;
 
+    //Metodo contructor, recibira los lados a los que corresconpode ya sea derecho o izquierdo 
+    //asi como la posicion del filosofo
     public Tenedores(int PosicionFiloso, JLabel lado_izquierdo, JLabel lado_derecho) {
+        //Las asignaciones:
+        //posicion del filosofo o a cual esta comiendo o pensando 
         this.PosicionFiloso = PosicionFiloso;
+        //los lados de los tenedores
         this.lado_der = lado_derecho;
         this.lado_izq = lado_izquierdo;
+        //declaracion de los hilos
         Hilo_tenedor = new Thread(this);
         Hilo_tenedor.start();
 
@@ -47,10 +55,23 @@ public class Tenedores implements Runnable {
         } catch (InterruptedException e) {
         }
     }
-
+    //hilo en donde se va a ir verificando cual lado se esta utilizando 
     @Override
     public void run() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for(int cont =0; cont<4; cont++){
+            //verifica si su tenedor izquierdo esta siendo utilizado para poder utiizar el derecho 
+            synchronized(this.lado_izq){  
+                //verifica si el tenedor derecho esta siendo utilizado 
+                synchronized(this.lado_der){
+                    //si los dos estan disponible en este caso se activa el proceso 1 
+                    //que le permite comer
+                    Proceso1();
+                }
+            }
+        // de lo contrario se activa el proceso dos en donde el filosofo no tiene  
+        //tenedor para comer por lo tanto piensa
+        Proceso2();   
+        }
     }
 
 }

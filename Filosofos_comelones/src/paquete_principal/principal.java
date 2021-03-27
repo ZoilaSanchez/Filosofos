@@ -1,3 +1,6 @@
+package paquete_principal;
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -26,17 +29,62 @@ public class principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Tenedor1 = new javax.swing.JLabel();
+        Tenedor2 = new javax.swing.JLabel();
+        Tenedor3 = new javax.swing.JLabel();
+        Tenedor4 = new javax.swing.JLabel();
+        Tenedor5 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Tenedor1.setText("Tenedor 1");
+
+        Tenedor2.setText("Tenedor 2");
+
+        Tenedor3.setText("Tenedor 3");
+
+        Tenedor4.setText("Tenedor 4");
+
+        Tenedor5.setText("Tenedor 5");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Tenedor2)
+                    .addComponent(Tenedor1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Tenedor3)
+                        .addGap(154, 154, 154))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Tenedor4)
+                        .addGap(84, 84, 84))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(219, Short.MAX_VALUE)
+                .addComponent(Tenedor5)
+                .addGap(165, 165, 165))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addComponent(Tenedor5)
+                .addGap(26, 26, 26)
+                .addComponent(Tenedor1)
+                .addGap(16, 16, 16)
+                .addComponent(Tenedor4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(Tenedor2)
+                .addGap(18, 18, 18)
+                .addComponent(Tenedor3)
+                .addGap(100, 100, 100))
         );
 
         pack();
@@ -78,5 +126,10 @@ public class principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JLabel Tenedor1;
+    public static javax.swing.JLabel Tenedor2;
+    public static javax.swing.JLabel Tenedor3;
+    public static javax.swing.JLabel Tenedor4;
+    public static javax.swing.JLabel Tenedor5;
     // End of variables declaration//GEN-END:variables
 }

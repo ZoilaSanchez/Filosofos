@@ -1,5 +1,8 @@
 package Filosofo;
 
+import java.util.concurrent.Semaphore;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JLabel;
 
 //hilo para los tenedores
@@ -9,6 +12,9 @@ public class Tenedores implements Runnable {
     int PosicionFiloso, res;
     Thread Hilo_tenedor;
     JLabel lado_der, lado_izq;
+    //Controlador de la region ya que 2 filosofos podran comer se podran 
+    //ejecutar 2 procesos.
+    private static Semaphore mutex = new Semaphore(2, true);
 
     //Metodo contructor, recibira los lados a los que corresconpode ya sea derecho o izquierdo 
     //asi como la posicion del filosofo
@@ -27,6 +33,13 @@ public class Tenedores implements Runnable {
 
     //Acá ocupa proceso de tenedor derecho e izquierdo
     public void Proceso1() {
+        //Entrando en la region critica: Esto par que ver si los tenedores estan 
+        //disponibles y no haya confictos
+        try {
+                mutex.acquire();
+        } catch (InterruptedException ex) {
+                Logger.getLogger(Tenedores.class.getName()).log(Level.SEVERE, null, ex);
+        }
         //Proceso1=COMER
         // Se cambia los estodos del tenedore derecho y del tenedor izquierdo
         lado_der.setText("Ocupado");
@@ -42,6 +55,8 @@ public class Tenedores implements Runnable {
         lado_der.setText("Disponible");
         lado_izq.setText("Disponible");
         System.out.println("Posición:" + (PosicionFiloso + 1) + "Pensando");
+        //saliendo de region critica
+        mutex.release();
     }
 
     public void Proceso2() {
@@ -59,6 +74,7 @@ public class Tenedores implements Runnable {
     @Override
     public void run() {
         for(int cont =0; cont<4; cont++){
+            
             //verifica si su tenedor izquierdo esta siendo utilizado para poder utiizar el derecho 
             synchronized(this.lado_izq){  
                 //verifica si el tenedor derecho esta siendo utilizado 
@@ -70,7 +86,8 @@ public class Tenedores implements Runnable {
             }
         // de lo contrario se activa el proceso dos en donde el filosofo no tiene  
         //tenedor para comer por lo tanto piensa
-        Proceso2();   
+        Proceso2();
+            
         }
     }
 

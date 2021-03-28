@@ -125,21 +125,20 @@ public class principal extends javax.swing.JFrame {
     tenedor[4] = Tenedor5;
  
     //ver el que tenedor estamos utilizando
-    for(pos_filo = 0; pos_filo < 5; pos_filo = pos_filo + 1){
-        
-        // la posicion para el tenedor izquierdo seria la posicion del filosofo -1
-        lado_izq = pos_filo -1;
-        //Cuando la posicion de filosofo es la primera
-        if(lado_izq <0){
-            //Seria la ultima posición de tenedores 
-            lado_izq = 4;
+    for (pos_filo = 0; pos_filo < 5; pos_filo=pos_filo+1) {
+            // la posicion para el tenedor izquierdo seria la posicion del filosofo -1
+            lado_izq= pos_filo- 1; 
+            //Cuando la posicion de filosofo es la primera
+            if (lado_izq < 0) {
+              //Seria la ultima posición de tenedores
+                lado_izq= 4;
+            }
+            //en este caso la posicion de su tenedor es el que sigue (derecho)
+            lado_der = pos_filo;
+            //Mandamos la posicion, si esta en el lado derecho o izquierdo 
+            tenedor2 = new Tenedores(pos_filo, tenedor[lado_izq], tenedor[lado_der]);
         }
-        //en este caso la posicion de su tenedor es el que sigue (derecho) 
-        lado_der = pos_filo;
-        
-        //Mandamos la posicion, si esta en el lado derecho o izquierdo 
-        tenedor2= new Tenedores(pos_filo, tenedor[lado_izq], tenedor[lado_izq]);
-    }
+    
     }//GEN-LAST:event_IniciarTActionPerformed
     
     

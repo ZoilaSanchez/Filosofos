@@ -2,7 +2,7 @@ package paquete_principal;
 
 import Filosofo.Tenedores;
 import javax.swing.JLabel;
-
+import java.util.Random;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -88,59 +88,67 @@ public class principal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(76, 76, 76)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(Tenedor1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 154, Short.MAX_VALUE)
                         .addComponent(Tenedor4))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(Tenedor2))
+                        .addComponent(Tenedor2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Tenedor3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addGap(92, 92, 92))
+                        .addComponent(Tenedor3)))
+                .addGap(83, 83, 83))
             .addGroup(layout.createSequentialGroup()
-                .addGap(187, 187, 187)
+                .addGap(129, 129, 129)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(82, 82, 82))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5)
-                    .addComponent(IniciarT)
-                    .addComponent(Tenedor5))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(187, 187, 187)
+                        .addComponent(Tenedor5))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(IniciarT)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(177, 177, 177)
+                .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(106, 106, 106)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Tenedor1)
                     .addComponent(Tenedor4))
-                .addGap(111, 111, 111)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(131, 131, 131)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Tenedor3)
                     .addComponent(Tenedor2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5)
-                .addGap(4, 4, 4)
+                .addGap(29, 29, 29)
                 .addComponent(Tenedor5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
-                .addComponent(IniciarT)
-                .addGap(221, 221, 221))
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(IniciarT)
+                        .addComponent(jLabel1))
+                    .addComponent(jLabel3))
+                .addGap(96, 96, 96)
+                .addComponent(jLabel2)
+                .addGap(111, 111, 111))
         );
 
         pack();
@@ -149,7 +157,7 @@ public class principal extends javax.swing.JFrame {
     private void IniciarTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IniciarTActionPerformed
         IniciarT.setEnabled(false);//Esto para evitar que hayan mas de 5 hilos ejecutandose
     //Agregar arreglos de los filosofos 
-    
+    String[] comida = {"Fideos", "Carne", "Papas fritas", "Ensalada"};
     //Arreglo de Tenedores 
     tenedor = new JLabel[5];
     tenedor[0] = Tenedor1;
@@ -167,10 +175,12 @@ public class principal extends javax.swing.JFrame {
               //Seria la ultima posición de tenedores
                 lado_izq= 4;
             }
+            Random rand = new Random();
+            int random = rand.nextInt(4);
             //en este caso la posicion de su tenedor es el que sigue (derecho)
             lado_der = pos_filo;
             //Mandamos la posicion, si esta en el lado derecho o izquierdo 
-            tenedor2 = new Tenedores(pos_filo, tenedor[lado_izq], tenedor[lado_der]);
+            tenedor2 = new Tenedores(pos_filo, tenedor[lado_izq], tenedor[lado_der], comida[random]);
         }
     
     }//GEN-LAST:event_IniciarTActionPerformed

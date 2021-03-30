@@ -13,13 +13,14 @@ public class Tenedores implements Runnable {
     int PosicionFiloso, res;
     Thread Hilo_tenedor;
     JLabel lado_der, lado_izq;
+    String plato;
     //Controlador de la region ya que 2 filosofos podran comer se podran 
     //ejecutar 2 procesos.
     private static Semaphore mutex = new Semaphore(2, true);
 
     //Metodo contructor, recibira los lados a los que corresconpode ya sea derecho o izquierdo 
     //asi como la posicion del filosofo
-    public Tenedores(int PosicionFiloso, JLabel lado_izquierdo, JLabel lado_derecho) {
+    public Tenedores(int PosicionFiloso, JLabel lado_izquierdo, JLabel lado_derecho, String plato) {
         //Las asignaciones:
         //posicion del filosofo o a cual esta comiendo o pensando 
         this.PosicionFiloso = PosicionFiloso;
@@ -29,6 +30,7 @@ public class Tenedores implements Runnable {
         //declaracion de los hilos
         Hilo_tenedor = new Thread(this);
         Hilo_tenedor.start();
+        this.plato = plato;
 
     }
 
@@ -50,6 +52,7 @@ public class Tenedores implements Runnable {
         lado_der.setText("Ocupado");
         lado_izq.setText("Ocupado");
         System.out.println("Posición:" + (PosicionFiloso + 1) + "Comiendo");
+        System.out.println("El plato es "+ plato);
         //Interrumpe el proceso por una tiempo 
         //Tiempo en el que el filoso tarda comiendo
         try {

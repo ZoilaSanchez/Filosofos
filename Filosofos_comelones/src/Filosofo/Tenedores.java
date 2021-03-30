@@ -1,5 +1,6 @@
 package Filosofo;
 
+import java.awt.Color;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -42,6 +43,10 @@ public class Tenedores implements Runnable {
         }
         //Proceso1=COMER
         // Se cambia los estodos del tenedore derecho y del tenedor izquierdo
+        lado_der.setOpaque(true);
+        lado_izq.setOpaque(true);
+        lado_der.setBackground(Color.red);
+        lado_izq.setBackground(Color.red);
         lado_der.setText("Ocupado");
         lado_izq.setText("Ocupado");
         System.out.println("Posición:" + (PosicionFiloso + 1) + "Comiendo");
@@ -54,6 +59,8 @@ public class Tenedores implements Runnable {
         //Cuando dejan de comer ya estan disponibles los tenedores
         lado_der.setText("Disponible");
         lado_izq.setText("Disponible");
+        lado_der.setBackground(Color.green);
+        lado_izq.setBackground(Color.green);
         System.out.println("Posición:" + (PosicionFiloso + 1) + "Pensando");
         //saliendo de region critica
         mutex.release();
@@ -62,6 +69,8 @@ public class Tenedores implements Runnable {
     public void Proceso2() {
         //Proceso2 = PENSAR
         //Cuando piensa los tenedores estan libres
+        lado_der.setBackground(Color.green);
+        lado_izq.setBackground(Color.green);
         lado_der.setText("Disponible");
         lado_izq.setText("Disponible");
         //Tiempo pensando

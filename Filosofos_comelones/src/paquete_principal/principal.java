@@ -16,6 +16,7 @@ import java.util.Random;
  */
 public class principal extends javax.swing.JFrame {
     //Declarar arreglo
+ 
     JLabel tenedor[];
     //variables: 
     int pos_filo, lado_izq = 0, lado_der = 0;
@@ -148,28 +149,41 @@ public class principal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(129, 129, 129)
-                        .addComponent(filosofo5)
-                        .addGap(46, 46, 46)
-                        .addComponent(comida5))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel7)
-                                .addComponent(Tenedor4))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(78, 78, 78)
-                                .addComponent(filosofo4)
-                                .addGap(28, 28, 28)
-                                .addComponent(comida4)))
-                        .addGap(33, 33, 33))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(97, 97, 97)
                         .addComponent(jLabel8)
-                        .addGap(73, 73, 73)))
+                        .addGap(73, 73, 73))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(129, 129, 129)
+                                .addComponent(filosofo5)
+                                .addGap(46, 46, 46)
+                                .addComponent(comida5))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(87, 87, 87)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel7)
+                                        .addComponent(Tenedor4))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(78, 78, 78)
+                                        .addComponent(filosofo4)
+                                        .addGap(28, 28, 28)
+                                        .addComponent(comida4)))))
+                        .addGap(33, 33, 33)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(comida2)
+                                .addGap(18, 18, 18)
+                                .addComponent(filosofo2)
+                                .addGap(99, 99, 99))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addGap(75, 75, 75))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -182,18 +196,7 @@ public class principal extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Tenedor2)
                             .addComponent(filosofo3))
-                        .addGap(0, 86, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(comida2)
-                                .addGap(18, 18, 18)
-                                .addComponent(filosofo2)
-                                .addGap(99, 99, 99))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(75, 75, 75))))))
+                        .addGap(0, 86, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,7 +272,7 @@ public class principal extends javax.swing.JFrame {
         //Agregar arreglos de los filosofos 
         String[] comida = {"Fideos", "Carne", "Papas fritas", "Ensalada"};
         
-        
+     
       
         
         //Arreglo de Tenedores 
@@ -293,8 +296,8 @@ public class principal extends javax.swing.JFrame {
             //en este caso la posicion de su tenedor es el que sigue (derecho)
             lado_der = pos_filo;
             //Mandamos la posicion, si esta en el lado derecho o izquierdo 
-         //   tenedor2 = new Tenedores(pos_filo, tenedor[lado_izq], tenedor[lado_der], comida[random], filosofo1, filosofo2, filosofo3, filosofo4, filosofo5, comida1, comida2, comida3, comida4, comida5,filosofo[pos_filo]);
-            tenedor2 = new Tenedores(pos_filo, tenedor[lado_izq], tenedor[lado_der]);
+           tenedor2 = new Tenedores(pos_filo, tenedor[lado_izq], tenedor[lado_der], comida[random], filosofo1, filosofo2, filosofo3, filosofo4, filosofo5, comida1, comida2, comida3, comida4, comida5);
+           // tenedor2 = new Tenedores(pos_filo, tenedor[lado_izq], tenedor[lado_der], filosofo[pos_filo]);
 
         }
 

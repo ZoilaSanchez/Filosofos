@@ -6,7 +6,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 
 //hilo para los tenedores
@@ -34,8 +33,8 @@ public class Tenedores implements Runnable {
 
     //Metodo contructor, recibira los lados a los que corresconpode ya sea derecho o izquierdo 
     //asi como la posicion del filosofo
-    //public Tenedores(int PosicionFiloso, JLabel lado_izquierdo, JLabel lado_derecho, String plato, JLabel filosofo1, JLabel filosofo2, JLabel filosofo3, JLabel filosofo4, JLabel filosofo5, JLabel comida1, JLabel comida2, JLabel comida3, JLabel comida4, JLabel comida5, JButton filosofo) {
-         public Tenedores(int PosicionFiloso, JLabel lado_izquierdo, JLabel lado_derecho) {
+    public Tenedores(int PosicionFiloso, JLabel lado_izquierdo, JLabel lado_derecho, String plato, JLabel filosofo1, JLabel filosofo2, JLabel filosofo3, JLabel filosofo4, JLabel filosofo5, JLabel comida1, JLabel comida2, JLabel comida3, JLabel comida4, JLabel comida5) {
+//         public Tenedores(int PosicionFiloso, JLabel lado_izquierdo, JLabel lado_derecho,JButton filosofo) {
 
         //Las asignaciones:
         //posicion del filosofo o a cual esta comiendo o pensando 
@@ -45,7 +44,7 @@ public class Tenedores implements Runnable {
         this.lado_izq = lado_izquierdo;
         
         //asignación de filosofos
-      /*  this.filosofo1 = filosofo1;
+        this.filosofo1 = filosofo1;
         this.filosofo2 = filosofo2;
         this.filosofo3 = filosofo3;
         this.filosofo4 = filosofo4;
@@ -55,30 +54,29 @@ public class Tenedores implements Runnable {
         this.comida2 = comida2;
         this.comida3 = comida3;
         this.comida4 = comida4;
-        this.comida5 = comida5;*/
+        this.comida5 = comida5;
         //declaracion de los hilos       
         Hilo_tenedor = new Thread(this);
         Hilo_tenedor.start();
         //this.plato = plato;
-        
+ 
        
 
     }
 
     //Acá ocupa proceso de tenedor derecho e izquierdo
     public void Proceso1() {
-       // Icon icono1;
+        Icon icono1;
         lado_der.setText("Ocupado");
         //lado_der.setBackground(Color.red);
         lado_der.setForeground(Color.red);
         lado_izq.setText("Ocupado");
        // lado_izq.setBackground(Color.red);
         lado_izq.setForeground(Color.red);
-        
-        
+    
         
         System.out.println("Posición:" + (PosicionFiloso + 1) + "Comiendo");
-        //System.out.println("El plato es " + plato);
+        System.out.println("El plato es " + plato);
         //Entrando en la region critica: Esto par que ver si los tenedores estan 
         //disponibles y no haya confictos
         try {
@@ -98,12 +96,11 @@ public class Tenedores implements Runnable {
         lado_izq.setText("Disponible");
       //  lado_izq.setBackground(Color.green);
         lado_izq.setForeground(Color.green);
-        
-      
+
 
         System.out.println("Posición:" + (PosicionFiloso + 1) + "Pensando");
 
-     /*   if (PosicionFiloso == 0) {
+       if (PosicionFiloso == 0) {
             icono1 = new ImageIcon(getClass().getResource("/Imagenes/Heracilito1.jpg"));
             filosofo1.setIcon(icono1);
             comidainicio(plato, comida1);
@@ -224,13 +221,10 @@ public class Tenedores implements Runnable {
         }
         //Interrumpe el proceso por una tiempo 
         //Tiempo en el que el filoso tarda comiendo
-    /*    try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-        }*/
+       
         //Cuando dejan de comer ya estan disponibles los tenedores
 
-      /*  if (PosicionFiloso == 0) {
+        if (PosicionFiloso == 0) {
             icono1 = new ImageIcon(getClass().getResource("/Imagenes/HeracilitoPiensa.jpg"));
             filosofo1.setIcon(icono1);
             comida1.setVisible(false);
@@ -251,7 +245,7 @@ public class Tenedores implements Runnable {
             icono1 = new ImageIcon(getClass().getResource("/Imagenes/DemocritoPiensa.jpg"));
             filosofo5.setIcon(icono1);
             comida5.setVisible(false);
-        }*/
+        }
         //saliendo de region critica
       //  mutex.release();
     }
@@ -267,8 +261,7 @@ public class Tenedores implements Runnable {
         lado_izq.setForeground(Color.green);
        // lado_izq.setBackground(Color.green);
         //Tiempo pensando
-       
-        
+
         
         try {
             Thread.sleep(5000);
@@ -297,7 +290,7 @@ public class Tenedores implements Runnable {
         }
     }
 
-    /*public void comidainicio(String comida, JLabel comiendo) {
+    public void comidainicio(String comida, JLabel comiendo) {
         Icon icono1;
         if (comida.equals("Fideos")) {
             icono1 = new ImageIcon(getClass().getResource("/Imagenes/fideos1.jpg"));
@@ -393,5 +386,5 @@ public class Tenedores implements Runnable {
             }
 
         }
-    }*/
+    }
 }

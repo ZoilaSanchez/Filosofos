@@ -1,9 +1,12 @@
 package paquete_principal;
 
 import Filosofo.Tenedores;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.geom.AffineTransform;
 import javax.swing.JLabel;
 import java.util.Random;
+import javax.swing.border.LineBorder;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -32,10 +35,19 @@ public class principal extends javax.swing.JFrame {
         comida3.setVisible(false);
         comida4.setVisible(false);
         comida5.setVisible(false);
+        diseñotenedor(Tenedor1);
+        diseñotenedor(Tenedor2);
+        diseñotenedor(Tenedor3);
+        diseñotenedor(Tenedor4);
+        diseñotenedor(Tenedor5);
         
-
+        this.setLocationRelativeTo(this);
     }
-
+public void diseñotenedor(JLabel x){
+            x.setText("Disponible");
+        x.setForeground(Color.blue);
+        x.setFont(Font.decode("yaahowu"));
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -68,201 +80,99 @@ public class principal extends javax.swing.JFrame {
         comida3 = new javax.swing.JLabel();
         comida4 = new javax.swing.JLabel();
         comida5 = new javax.swing.JLabel();
+        fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Tenedor1.setText("Tenedor 1");
+        Tenedor1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/4.png"))); // NOI18N
+        getContentPane().add(Tenedor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, -1));
 
-        Tenedor2.setText("Tenedor 2");
+        Tenedor2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/4.png"))); // NOI18N
+        getContentPane().add(Tenedor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, -1, -1));
 
-        Tenedor3.setText("Tenedor 3");
+        Tenedor3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/4.png"))); // NOI18N
+        getContentPane().add(Tenedor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, -1, -1));
 
-        Tenedor4.setText("Tenedor 4");
+        Tenedor4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/4.png"))); // NOI18N
+        getContentPane().add(Tenedor4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 420, -1, -1));
 
-        Tenedor5.setText("Tenedor 5");
+        Tenedor5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/4.png"))); // NOI18N
+        getContentPane().add(Tenedor5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, -1, -1));
 
-        IniciarT.setText("Iniciar");
+        IniciarT.setBackground(new java.awt.Color(255, 255, 255));
+        IniciarT.setFont(new java.awt.Font("Yaahowu", 1, 18)); // NOI18N
+        IniciarT.setForeground(new java.awt.Color(0, 0, 0));
+        IniciarT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/plato.png"))); // NOI18N
+        IniciarT.setText("COMER");
+        IniciarT.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         IniciarT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IniciarTActionPerformed(evt);
             }
         });
+        getContentPane().add(IniciarT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 140, 80));
 
         filosofo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/HeracilitoPiensa.jpg"))); // NOI18N
+        getContentPane().add(filosofo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
+        filosofo1.getAccessibleContext().setAccessibleName("filosofo1");
 
         filosofo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PitagorasPiensa.jpg"))); // NOI18N
+        getContentPane().add(filosofo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, -1));
+        filosofo2.getAccessibleContext().setAccessibleName("filosofo2");
 
         filosofo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/SocratesPiensa.jpg"))); // NOI18N
+        getContentPane().add(filosofo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 190, -1, -1));
 
         filosofo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MiletoPiensa.jpg"))); // NOI18N
+        getContentPane().add(filosofo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 390, -1, -1));
 
         filosofo5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/DemocritoPiensa.jpg"))); // NOI18N
+        getContentPane().add(filosofo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Yaahowu", 1, 14)); // NOI18N
         jLabel6.setText("Heráclito de Efeso");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Yaahowu", 1, 14)); // NOI18N
         jLabel7.setText("Demócrito de Abdera");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 510, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Yaahowu", 1, 14)); // NOI18N
         jLabel8.setText("Tales de Mileto");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 520, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("Yaahowu", 1, 14)); // NOI18N
         jLabel9.setText("Sócrates");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 170, -1, -1));
 
+        jLabel10.setFont(new java.awt.Font("Yaahowu", 1, 14)); // NOI18N
         jLabel10.setText("Pitágoras");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, -1, -1));
 
         comida1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/carne2.jpg"))); // NOI18N
         comida1.setName("Carne"); // NOI18N
+        getContentPane().add(comida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, -1, -1));
+        comida1.getAccessibleContext().setAccessibleName("Carne");
 
         comida2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ensalada2.jpg"))); // NOI18N
+        getContentPane().add(comida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, -1, -1));
+        comida2.getAccessibleContext().setAccessibleName("Ensalada");
 
         comida3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fideos2.jpg"))); // NOI18N
+        getContentPane().add(comida3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 230, 60, 30));
+        comida3.getAccessibleContext().setAccessibleName("Fideos");
 
         comida4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/papas2.jpg"))); // NOI18N
+        getContentPane().add(comida4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, -1, -1));
+        comida4.getAccessibleContext().setAccessibleName("Papas");
 
         comida5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ensalada2.jpg"))); // NOI18N
+        getContentPane().add(comida5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addGap(122, 122, 122))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Tenedor5)
-                                .addGap(151, 151, 151)
-                                .addComponent(filosofo1))
-                            .addComponent(jLabel6))
-                        .addGap(335, 335, 335))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(308, 308, 308)
-                .addComponent(comida1)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(IniciarT)
-                .addGap(368, 368, 368)
-                .addComponent(Tenedor1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addComponent(jLabel8)
-                        .addGap(73, 73, 73))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(129, 129, 129)
-                                .addComponent(filosofo5)
-                                .addGap(46, 46, 46)
-                                .addComponent(comida5))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(87, 87, 87)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel7)
-                                        .addComponent(Tenedor4))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(78, 78, 78)
-                                        .addComponent(filosofo4)
-                                        .addGap(28, 28, 28)
-                                        .addComponent(comida4)))))
-                        .addGap(33, 33, 33)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(comida2)
-                                .addGap(18, 18, 18)
-                                .addComponent(filosofo2)
-                                .addGap(99, 99, 99))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(75, 75, 75))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(210, 210, 210)
-                                .addComponent(comida3))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(62, 62, 62)
-                                .addComponent(Tenedor3)))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Tenedor2)
-                            .addComponent(filosofo3))
-                        .addGap(0, 86, Short.MAX_VALUE))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Tenedor1)
-                            .addComponent(filosofo1))
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(filosofo2)
-                            .addComponent(comida2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(IniciarT)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                                .addComponent(comida1)
-                                .addGap(72, 72, 72))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(Tenedor5)
-                                .addGap(83, 83, 83)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(filosofo5)
-                            .addComponent(comida5))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel7)
-                        .addGap(31, 31, 31)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Tenedor4)
-                    .addComponent(Tenedor2))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(comida4)
-                            .addComponent(filosofo4))
-                        .addGap(18, 18, 18))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Tenedor3)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(filosofo3)
-                                .addComponent(comida3)))
-                        .addGap(16, 16, 16)))
-                .addComponent(jLabel8)
-                .addGap(23, 23, 23)
-                .addComponent(jLabel9)
-                .addContainerGap(80, Short.MAX_VALUE))
-        );
-
-        filosofo1.getAccessibleContext().setAccessibleName("filosofo1");
-        filosofo2.getAccessibleContext().setAccessibleName("filosofo2");
-        comida1.getAccessibleContext().setAccessibleName("Carne");
-        comida2.getAccessibleContext().setAccessibleName("Ensalada");
-        comida3.getAccessibleContext().setAccessibleName("Fideos");
-        comida4.getAccessibleContext().setAccessibleName("Papas");
+        fondo.setBackground(new java.awt.Color(102, 102, 102));
+        fondo.setForeground(new java.awt.Color(102, 102, 102));
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -270,11 +180,7 @@ public class principal extends javax.swing.JFrame {
     private void IniciarTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IniciarTActionPerformed
         IniciarT.setEnabled(false);//Esto para evitar que hayan mas de 5 hilos ejecutandose
         //Agregar arreglos de los filosofos 
-        String[] comida = {"Fideos", "Carne", "Papas fritas", "Ensalada"};
-        
-     
-      
-        
+        String[] comida = {"Fideos", "Carne", "Papas fritas", "Ensalada"};      
         //Arreglo de Tenedores 
         tenedor = new JLabel[5];
         tenedor[0] = Tenedor1;
@@ -300,7 +206,6 @@ public class principal extends javax.swing.JFrame {
            // tenedor2 = new Tenedores(pos_filo, tenedor[lado_izq], tenedor[lado_der], filosofo[pos_filo]);
 
         }
-
     }//GEN-LAST:event_IniciarTActionPerformed
 
     public static void main(String args[]) {
@@ -352,6 +257,7 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JLabel filosofo3;
     private javax.swing.JLabel filosofo4;
     private javax.swing.JLabel filosofo5;
+    private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

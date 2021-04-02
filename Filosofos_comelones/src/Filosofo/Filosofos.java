@@ -54,39 +54,4 @@ public class Filosofos {
     public void setFilosofo5(JLabel filosofo5) {
         this.filosofo5 = filosofo5;
     }
-  /*   if(PosicionFiloso==0){
-        icono1 = new ImageIcon(getClass().getResource("/Imagenes/Heracilito1.jpg"));
-        filosofo1.setIcon(icono1);
-        icono1 = new ImageIcon(getClass().getResource("/Imagenes/Heracilito2.jpg"));
-        filosofo1.setIcon(icono1);
-        icono1 = new ImageIcon(getClass().getResource("/Imagenes/Heracilito3.jpg"));
-        filosofo1.setIcon(icono1);}
-        else if (PosicionFiloso==1){
-        icono1 = new ImageIcon(getClass().getResource("/Imagenes/Pitagoras1.jpg"));
-        filosofo2.setIcon(icono1);
-        icono1 = new ImageIcon(getClass().getResource("/Imagenes/Pitagoras2.jpg"));
-        filosofo2.setIcon(icono1);
-        icono1 = new ImageIcon(getClass().getResource("/Imagenes/Pitagoras3.jpg"));
-        filosofo2.setIcon(icono1);}
-        else if (PosicionFiloso==2){
-        icono1 = new ImageIcon(getClass().getResource("/Imagenes/Socrates1.jpg"));
-        filosofo3.setIcon(icono1);
-        icono1 = new ImageIcon(getClass().getResource("/Imagenes/Socrates2.jpg"));
-        filosofo3.setIcon(icono1);
-        icono1 = new ImageIcon(getClass().getResource("/Imagenes/Socrates3.jpg"));
-        filosofo3.setIcon(icono1);}
-        else if (PosicionFiloso==3){
-        icono1 = new ImageIcon(getClass().getResource("/Imagenes/Mileto1.jpg"));
-        filosofo4.setIcon(icono1);
-        icono1 = new ImageIcon(getClass().getResource("/Imagenes/Mileto2.jpg"));
-        filosofo4.setIcon(icono1);
-        icono1 = new ImageIcon(getClass().getResource("/Imagenes/Mileto3.jpg"));
-        filosofo4.setIcon(icono1);}
-        else if (PosicionFiloso==4){
-        icono1 = new ImageIcon(getClass().getResource("/Imagenes/Democrito1.jpg"));
-        filosofo5.setIcon(icono1);
-        icono1 = new ImageIcon(getClass().getResource("/Imagenes/Democrito2.jpg"));
-        filosofo5.setIcon(icono1);
-        icono1 = new ImageIcon(getClass().getResource("/Imagenes/Democrito3.jpg"));
-        filosofo5.setIcon(icono1);}*/
 }

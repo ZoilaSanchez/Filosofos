@@ -1,6 +1,7 @@
 package Filosofo;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -58,48 +59,34 @@ public class Tenedores implements Runnable {
         //declaracion de los hilos       
         Hilo_tenedor = new Thread(this);
         Hilo_tenedor.start();
-        //this.plato = plato;
- 
-       
-
+        this.plato = plato;
     }
 
     //Acá ocupa proceso de tenedor derecho e izquierdo
     public void Proceso1() {
-        Icon icono1;
-        lado_der.setText("Ocupado");
-        //lado_der.setBackground(Color.red);
-        lado_der.setForeground(Color.red);
-        lado_izq.setText("Ocupado");
-       // lado_izq.setBackground(Color.red);
-        lado_izq.setForeground(Color.red);
-    
-        
-        System.out.println("Posición:" + (PosicionFiloso + 1) + "Comiendo");
-        System.out.println("El plato es " + plato);
+        Icon icono1,icono2;
+         icono1 = new ImageIcon(getClass().getResource("/Imagenes/4no.png"));
+        lado_der.setIcon(icono1);
+        icono1 = new ImageIcon(getClass().getResource("/Imagenes/4no.png"));
+        lado_izq.setIcon(icono1);
         //Entrando en la region critica: Esto par que ver si los tenedores estan 
         //disponibles y no haya confictos
         try {
-            // mutex.acquire();
-            Thread.sleep(5000);
+            mutex.acquire();
         } catch (InterruptedException ex) {
             Logger.getLogger(Tenedores.class.getName()).log(Level.SEVERE, null, ex);
         }
         //Proceso1=COMER
         // Se cambia los estodos del tenedore derecho y del tenedor izquierdo
-        //lado_der.setOpaque(true);
-        //lado_izq.setOpaque(true);
-
-        lado_der.setText("Disponible");
-        //lado_der.setBackground(Color.green);
-        lado_der.setForeground(Color.green);
-        lado_izq.setText("Disponible");
-      //  lado_izq.setBackground(Color.green);
-        lado_izq.setForeground(Color.green);
-
-
-        System.out.println("Posición:" + (PosicionFiloso + 1) + "Pensando");
-
+        lado_der.setText("Ocupado");
+        lado_der.setForeground(Color.black);
+        lado_der.setFont(Font.decode("yaahowu"));
+        lado_izq.setText("Ocupado");
+        lado_izq.setForeground(Color.black);
+        lado_izq.setFont(Font.decode("yaahowu"));
+       
+        System.out.println("Filosofo : " + (PosicionFiloso + 1) + " Comiendo");
+        
        if (PosicionFiloso == 0) {
             icono1 = new ImageIcon(getClass().getResource("/Imagenes/Heracilito1.jpg"));
             filosofo1.setIcon(icono1);
@@ -211,6 +198,7 @@ public class Tenedores implements Runnable {
                     Thread.sleep(1500);
                 } catch (InterruptedException e) {
                 }
+                
                 icono1 = new ImageIcon(getClass().getResource("/Imagenes/Democrito3.jpg"));
                 filosofo5.setIcon(icono1);
                 try {
@@ -221,9 +209,23 @@ public class Tenedores implements Runnable {
         }
         //Interrumpe el proceso por una tiempo 
         //Tiempo en el que el filoso tarda comiendo
-       
+       try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
         //Cuando dejan de comer ya estan disponibles los tenedores
-
+         icono1 = new ImageIcon(getClass().getResource("/Imagenes/4.png"));
+        lado_der.setIcon(icono1);
+        lado_der.setText("Disponible");
+        lado_der.setForeground(Color.blue);
+        lado_der.setFont(Font.decode("yaahowu"));
+        icono1 = new ImageIcon(getClass().getResource("/Imagenes/4.png"));
+        lado_izq.setIcon(icono1);
+        lado_izq.setText("Disponible");
+        lado_izq.setForeground(Color.blue);
+        lado_izq.setFont(Font.decode("yaahowu"));
+         System.out.println("Filosofo : " + (PosicionFiloso + 1) + " Pensando");
+         System.out.println("");
         if (PosicionFiloso == 0) {
             icono1 = new ImageIcon(getClass().getResource("/Imagenes/HeracilitoPiensa.jpg"));
             filosofo1.setIcon(icono1);
@@ -247,7 +249,7 @@ public class Tenedores implements Runnable {
             comida5.setVisible(false);
         }
         //saliendo de region critica
-      //  mutex.release();
+       mutex.release();
     }
 
     public void Proceso2() {
@@ -256,13 +258,10 @@ public class Tenedores implements Runnable {
         
         lado_der.setText("Disponible");
         //lado_der.setBackground(Color.green);
-        lado_der.setForeground(Color.green);
+        lado_der.setForeground(Color.blue);
         lado_izq.setText("Disponible");
-        lado_izq.setForeground(Color.green);
-       // lado_izq.setBackground(Color.green);
-        //Tiempo pensando
-
-        
+        lado_izq.setForeground(Color.blue);
+        //Tiempo pensando       
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
@@ -293,19 +292,19 @@ public class Tenedores implements Runnable {
     public void comidainicio(String comida, JLabel comiendo) {
         Icon icono1;
         if (comida.equals("Fideos")) {
-            icono1 = new ImageIcon(getClass().getResource("/Imagenes/fideos1.jpg"));
+            icono1 = new ImageIcon(getClass().getResource("/Imagenes/fideos2.jpg"));
             comiendo.setIcon(icono1);
             comiendo.setVisible(true);
         } else if (comida.equals("Carne")) {
-            icono1 = new ImageIcon(getClass().getResource("/Imagenes/carne1.jpg"));
+            icono1 = new ImageIcon(getClass().getResource("/Imagenes/carne2.jpg"));
             comiendo.setIcon(icono1);
             comiendo.setVisible(true);
         } else if (comida.equals("Papas fritas")) {
-            icono1 = new ImageIcon(getClass().getResource("/Imagenes/papas1.jpg"));
+            icono1 = new ImageIcon(getClass().getResource("/Imagenes/papas2.jpg"));
             comiendo.setIcon(icono1);
             comiendo.setVisible(true);
         } else if (comida.equals("Ensalada")) {
-            icono1 = new ImageIcon(getClass().getResource("/Imagenes/ensalada1.jpg"));
+            icono1 = new ImageIcon(getClass().getResource("/Imagenes/ensalada2.jpg"));
             comiendo.setIcon(icono1);
             comiendo.setVisible(true);
         }
@@ -315,73 +314,73 @@ public class Tenedores implements Runnable {
         Icon icono1;
         if (comida.equals("Fideos")) {
             if (paso == 0) {
-                icono1 = new ImageIcon(getClass().getResource("/Imagenes/fideos2.jpg"));
-                comiendo.setIcon(icono1);
-            } else if (paso == 1) {
                 icono1 = new ImageIcon(getClass().getResource("/Imagenes/fideos3.jpg"));
                 comiendo.setIcon(icono1);
-            } else if (paso == 2) {
+            } else if (paso == 1) {
                 icono1 = new ImageIcon(getClass().getResource("/Imagenes/fideos4.jpg"));
                 comiendo.setIcon(icono1);
-            } else if (paso == 3) {
+            } else if (paso == 2) {
                 icono1 = new ImageIcon(getClass().getResource("/Imagenes/fideos5.jpg"));
                 comiendo.setIcon(icono1);
-            } else if (paso == 4) {
+            } else if (paso == 3) {
                 icono1 = new ImageIcon(getClass().getResource("/Imagenes/fideos6.jpg"));
+                comiendo.setIcon(icono1);
+            } else if (paso == 4) {
+                icono1 = new ImageIcon(getClass().getResource("/Imagenes/fideos1.jpg"));
                 comiendo.setIcon(icono1);
             }
 
         } else if (comida.equals("Carne")) {
             if (paso == 0) {
-                icono1 = new ImageIcon(getClass().getResource("/Imagenes/carne2.jpg"));
-                comiendo.setIcon(icono1);
-            } else if (paso == 1) {
                 icono1 = new ImageIcon(getClass().getResource("/Imagenes/carne3.jpg"));
                 comiendo.setIcon(icono1);
-            } else if (paso == 2) {
+            } else if (paso == 1) {
                 icono1 = new ImageIcon(getClass().getResource("/Imagenes/carne4.jpg"));
                 comiendo.setIcon(icono1);
-            } else if (paso == 3) {
+            } else if (paso == 2) {
                 icono1 = new ImageIcon(getClass().getResource("/Imagenes/carne5.jpg"));
                 comiendo.setIcon(icono1);
-            } else if (paso == 4) {
+            } else if (paso == 3) {
                 icono1 = new ImageIcon(getClass().getResource("/Imagenes/carne6.jpg"));
+                comiendo.setIcon(icono1);
+            } else if (paso == 4) {
+                icono1 = new ImageIcon(getClass().getResource("/Imagenes/carne1.jpg"));
                 comiendo.setIcon(icono1);
             }
 
         } else if (comida.equals("Papas fritas")) {
             if (paso == 0) {
-                icono1 = new ImageIcon(getClass().getResource("/Imagenes/papas2.jpg"));
-                comiendo.setIcon(icono1);
-            } else if (paso == 1) {
                 icono1 = new ImageIcon(getClass().getResource("/Imagenes/papas3.jpg"));
                 comiendo.setIcon(icono1);
-            } else if (paso == 2) {
+            } else if (paso == 1) {
                 icono1 = new ImageIcon(getClass().getResource("/Imagenes/papas4.jpg"));
                 comiendo.setIcon(icono1);
-            } else if (paso == 3) {
+            } else if (paso == 2) {
                 icono1 = new ImageIcon(getClass().getResource("/Imagenes/papas5.jpg"));
                 comiendo.setIcon(icono1);
-            } else if (paso == 4) {
+            } else if (paso == 3) {
                 icono1 = new ImageIcon(getClass().getResource("/Imagenes/papas6.jpg"));
+                comiendo.setIcon(icono1);
+            } else if (paso == 4) {
+                icono1 = new ImageIcon(getClass().getResource("/Imagenes/papas1.jpg"));
                 comiendo.setIcon(icono1);
             }
 
         } else if (comida.equals("Ensalada")) {
             if (paso == 0) {
-                icono1 = new ImageIcon(getClass().getResource("/Imagenes/ensalada2.jpg"));
-                comiendo.setIcon(icono1);
-            } else if (paso == 1) {
                 icono1 = new ImageIcon(getClass().getResource("/Imagenes/ensalada3.jpg"));
                 comiendo.setIcon(icono1);
-            } else if (paso == 2) {
+            } else if (paso == 1) {
                 icono1 = new ImageIcon(getClass().getResource("/Imagenes/ensalada4.jpg"));
                 comiendo.setIcon(icono1);
-            } else if (paso == 3) {
+            } else if (paso == 2) {
                 icono1 = new ImageIcon(getClass().getResource("/Imagenes/ensalada5.jpg"));
                 comiendo.setIcon(icono1);
-            } else if (paso == 4) {
+            } else if (paso == 3) {
                 icono1 = new ImageIcon(getClass().getResource("/Imagenes/ensalada6.jpg"));
+                comiendo.setIcon(icono1);
+            } else if (paso == 4) {
+                icono1 = new ImageIcon(getClass().getResource("/Imagenes/ensalada1.jpg"));
                 comiendo.setIcon(icono1);
             }
 

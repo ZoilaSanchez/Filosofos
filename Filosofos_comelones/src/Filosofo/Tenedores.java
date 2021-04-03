@@ -80,10 +80,10 @@ public class Tenedores implements Runnable {
         // Se cambia los estodos del tenedore derecho y del tenedor izquierdo
         lado_der.setText("Ocupado");
         lado_der.setForeground(Color.blue);
-        lado_der.setFont(Font.decode("Tahoma"));
+        lado_der.setFont(Font.decode("Yaahowu"));
         lado_izq.setText("Ocupado");
         lado_izq.setForeground(Color.blue);
-        lado_izq.setFont(Font.decode("Tahoma"));
+        lado_izq.setFont(Font.decode("Yaahowu"));
        
         System.out.println("Filosofo : " + (PosicionFiloso + 1) + " Comiendo");
         
@@ -217,12 +217,12 @@ public class Tenedores implements Runnable {
          icono1 = new ImageIcon(getClass().getResource("/Imagenes/4.png"));
         lado_der.setIcon(icono1);
         lado_der.setText("Disponible");
-        lado_der.setForeground(Color.blue);
+        lado_der.setForeground(Color.red);
         lado_der.setFont(Font.decode("yaahowu"));
         icono1 = new ImageIcon(getClass().getResource("/Imagenes/4.png"));
         lado_izq.setIcon(icono1);
         lado_izq.setText("Disponible");
-        lado_izq.setForeground(Color.blue);
+        lado_izq.setForeground(Color.red);
         lado_izq.setFont(Font.decode("yaahowu"));
          System.out.println("Filosofo : " + (PosicionFiloso + 1) + " Pensando");
          System.out.println("");
@@ -258,9 +258,11 @@ public class Tenedores implements Runnable {
         
         lado_der.setText("Disponible");
         //lado_der.setBackground(Color.green);
-        lado_der.setForeground(Color.blue);
+        lado_der.setForeground(Color.red);
+        lado_der.setFont(Font.decode("yaahowu"));
         lado_izq.setText("Disponible");
-        lado_izq.setForeground(Color.blue);
+        lado_izq.setForeground(Color.red);
+        lado_izq.setFont(Font.decode("yaahowu"));
         //Tiempo pensando       
         try {
             Thread.sleep(5000);

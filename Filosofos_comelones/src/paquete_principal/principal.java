@@ -2,6 +2,8 @@ package paquete_principal;
 
 import Filosofo.Tenedores;
 import java.awt.Color;
+import java.applet.Applet;
+import java.awt.Graphics;
 import java.awt.Font;
 import java.awt.geom.AffineTransform;
 import javax.swing.JLabel;
@@ -105,14 +107,13 @@ public void diseñotenedor(JLabel x){
         IniciarT.setFont(new java.awt.Font("Yaahowu", 1, 12)); // NOI18N
         IniciarT.setForeground(new java.awt.Color(0, 0, 0));
         IniciarT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/plate.png"))); // NOI18N
-        IniciarT.setText("COMENSALES");
         IniciarT.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         IniciarT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IniciarTActionPerformed(evt);
             }
         });
-        getContentPane().add(IniciarT, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 500, 150, 60));
+        getContentPane().add(IniciarT, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 60, 60));
 
         filosofo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/HeracilitoPiensa.jpg"))); // NOI18N
         getContentPane().add(filosofo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
@@ -173,8 +174,8 @@ public void diseñotenedor(JLabel x){
 
         fondo.setBackground(new java.awt.Color(102, 102, 102));
         fondo.setForeground(new java.awt.Color(102, 102, 102));
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo1.2.jpg"))); // NOI18N
-        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 590));
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondoesti.png"))); // NOI18N
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -209,7 +210,7 @@ public void diseñotenedor(JLabel x){
 
         }
     }//GEN-LAST:event_IniciarTActionPerformed
-
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -241,6 +242,7 @@ public void diseñotenedor(JLabel x){
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton IniciarT;

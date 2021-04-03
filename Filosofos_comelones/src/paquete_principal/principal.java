@@ -45,8 +45,8 @@ public class principal extends javax.swing.JFrame {
     }
 public void diseñotenedor(JLabel x){
             x.setText("Disponible");
-        x.setForeground(Color.blue);
-        x.setFont(Font.decode("yaahowu"));
+        x.setForeground(Color.red);
+        x.setFont(Font.decode("Tahoma"));
 }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -85,6 +85,7 @@ public void diseñotenedor(JLabel x){
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Tenedor1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         Tenedor1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/4.png"))); // NOI18N
         getContentPane().add(Tenedor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, -1));
 
@@ -100,29 +101,29 @@ public void diseñotenedor(JLabel x){
         Tenedor5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/4.png"))); // NOI18N
         getContentPane().add(Tenedor5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, -1, -1));
 
-        IniciarT.setBackground(new java.awt.Color(255, 255, 255));
-        IniciarT.setFont(new java.awt.Font("Yaahowu", 1, 18)); // NOI18N
+        IniciarT.setBackground(new java.awt.Color(153, 153, 255));
+        IniciarT.setFont(new java.awt.Font("Yaahowu", 1, 12)); // NOI18N
         IniciarT.setForeground(new java.awt.Color(0, 0, 0));
-        IniciarT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/plato.png"))); // NOI18N
-        IniciarT.setText("COMER");
-        IniciarT.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
+        IniciarT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/plate.png"))); // NOI18N
+        IniciarT.setText("COMENSALES");
+        IniciarT.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         IniciarT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IniciarTActionPerformed(evt);
             }
         });
-        getContentPane().add(IniciarT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 140, 80));
+        getContentPane().add(IniciarT, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 500, 150, 60));
 
         filosofo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/HeracilitoPiensa.jpg"))); // NOI18N
         getContentPane().add(filosofo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
         filosofo1.getAccessibleContext().setAccessibleName("filosofo1");
 
         filosofo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PitagorasPiensa.jpg"))); // NOI18N
-        getContentPane().add(filosofo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, -1));
+        getContentPane().add(filosofo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, -1, -1));
         filosofo2.getAccessibleContext().setAccessibleName("filosofo2");
 
         filosofo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/SocratesPiensa.jpg"))); // NOI18N
-        getContentPane().add(filosofo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 190, -1, -1));
+        getContentPane().add(filosofo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, -1, -1));
 
         filosofo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MiletoPiensa.jpg"))); // NOI18N
         getContentPane().add(filosofo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 390, -1, -1));
@@ -130,25 +131,25 @@ public void diseñotenedor(JLabel x){
         filosofo5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/DemocritoPiensa.jpg"))); // NOI18N
         getContentPane().add(filosofo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Yaahowu", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Heráclito de Efeso");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Yaahowu", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setText("Demócrito de Abdera");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 510, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Yaahowu", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setText("Tales de Mileto");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 520, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 510, -1, -1));
 
-        jLabel9.setFont(new java.awt.Font("Yaahowu", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setText("Sócrates");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 170, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Yaahowu", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setText("Pitágoras");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, -1, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, -1));
 
         comida1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/carne2.jpg"))); // NOI18N
         comida1.setName("Carne"); // NOI18N
@@ -156,7 +157,7 @@ public void diseñotenedor(JLabel x){
         comida1.getAccessibleContext().setAccessibleName("Carne");
 
         comida2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ensalada2.jpg"))); // NOI18N
-        getContentPane().add(comida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, -1, -1));
+        getContentPane().add(comida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, -1, -1));
         comida2.getAccessibleContext().setAccessibleName("Ensalada");
 
         comida3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fideos2.jpg"))); // NOI18N
@@ -172,7 +173,8 @@ public void diseñotenedor(JLabel x){
 
         fondo.setBackground(new java.awt.Color(102, 102, 102));
         fondo.setForeground(new java.awt.Color(102, 102, 102));
-        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 570));
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo1.2.jpg"))); // NOI18N
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 590));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

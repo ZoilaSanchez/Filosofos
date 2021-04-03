@@ -79,11 +79,11 @@ public class Tenedores implements Runnable {
         //Proceso1=COMER
         // Se cambia los estodos del tenedore derecho y del tenedor izquierdo
         lado_der.setText("Ocupado");
-        lado_der.setForeground(Color.black);
-        lado_der.setFont(Font.decode("yaahowu"));
+        lado_der.setForeground(Color.blue);
+        lado_der.setFont(Font.decode("Tahoma"));
         lado_izq.setText("Ocupado");
-        lado_izq.setForeground(Color.black);
-        lado_izq.setFont(Font.decode("yaahowu"));
+        lado_izq.setForeground(Color.blue);
+        lado_izq.setFont(Font.decode("Tahoma"));
        
         System.out.println("Filosofo : " + (PosicionFiloso + 1) + " Comiendo");
         

@@ -65,10 +65,17 @@ public class Tenedores implements Runnable {
     //Acá ocupa proceso de tenedor derecho e izquierdo
     public void Proceso1() {
         Icon icono1,icono2;
-         icono1 = new ImageIcon(getClass().getResource("/Imagenes/4no.png"));
-        lado_der.setIcon(icono1);
         icono1 = new ImageIcon(getClass().getResource("/Imagenes/4no.png"));
+        lado_der.setIcon(icono1);
+        lado_der.setText("");
+        lado_der.setText("Ocupado");
+        lado_der.setForeground(Color.blue);
+        lado_der.setFont(Font.decode("Yaahowu"));
         lado_izq.setIcon(icono1);
+        lado_izq.setText("");
+        lado_izq.setText("Ocupado");
+        lado_izq.setForeground(Color.blue);
+        lado_izq.setFont(Font.decode("Yaahowu"));
         //Entrando en la region critica: Esto par que ver si los tenedores estan 
         //disponibles y no haya confictos
         try {
@@ -78,13 +85,17 @@ public class Tenedores implements Runnable {
         }
         //Proceso1=COMER
         // Se cambia los estodos del tenedore derecho y del tenedor izquierdo
+     
+       lado_der.setIcon(icono1);
+        lado_der.setText("");
         lado_der.setText("Ocupado");
         lado_der.setForeground(Color.blue);
         lado_der.setFont(Font.decode("Yaahowu"));
+        lado_izq.setIcon(icono1);
+        lado_izq.setText("");
         lado_izq.setText("Ocupado");
         lado_izq.setForeground(Color.blue);
         lado_izq.setFont(Font.decode("Yaahowu"));
-       
         System.out.println("Filosofo : " + (PosicionFiloso + 1) + " Comiendo");
         
        if (PosicionFiloso == 0) {
@@ -216,11 +227,12 @@ public class Tenedores implements Runnable {
         //Cuando dejan de comer ya estan disponibles los tenedores
          icono1 = new ImageIcon(getClass().getResource("/Imagenes/4.png"));
         lado_der.setIcon(icono1);
+        lado_der.setText("");
         lado_der.setText("Disponible");
         lado_der.setForeground(Color.red);
         lado_der.setFont(Font.decode("yaahowu"));
-        icono1 = new ImageIcon(getClass().getResource("/Imagenes/4.png"));
         lado_izq.setIcon(icono1);
+        lado_izq.setText("");
         lado_izq.setText("Disponible");
         lado_izq.setForeground(Color.red);
         lado_izq.setFont(Font.decode("yaahowu"));
@@ -255,11 +267,11 @@ public class Tenedores implements Runnable {
     public void Proceso2() {
         //Proceso2 = PENSAR
         //Cuando piensa los tenedores estan libres
-        
+        lado_der.setText("");
         lado_der.setText("Disponible");
-        //lado_der.setBackground(Color.green);
         lado_der.setForeground(Color.red);
         lado_der.setFont(Font.decode("yaahowu"));
+        lado_izq.setText("");
         lado_izq.setText("Disponible");
         lado_izq.setForeground(Color.red);
         lado_izq.setFont(Font.decode("yaahowu"));

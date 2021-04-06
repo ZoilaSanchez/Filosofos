@@ -86,12 +86,10 @@ public class Tenedores implements Runnable {
         //Proceso1=COMER
         // Se cambia los estodos del tenedore derecho y del tenedor izquierdo
      
-       lado_der.setIcon(icono1);
         lado_der.setText("");
         lado_der.setText("Ocupado");
         lado_der.setForeground(Color.blue);
         lado_der.setFont(Font.decode("Yaahowu"));
-        lado_izq.setIcon(icono1);
         lado_izq.setText("");
         lado_izq.setText("Ocupado");
         lado_izq.setForeground(Color.blue);

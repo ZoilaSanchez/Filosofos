@@ -46,9 +46,9 @@ public class principal extends javax.swing.JFrame {
         this.setLocationRelativeTo(this);
     }
 public void diseñotenedor(JLabel x){
-            x.setText("Disponible");
+        
         x.setForeground(Color.red);
-        x.setFont(Font.decode("Tahoma"));
+        x.setFont(Font.decode("Yaahowu"));
 }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -92,22 +92,27 @@ public void diseñotenedor(JLabel x){
 
         Tenedor1.setFont(new java.awt.Font("Yaahowu", 1, 13)); // NOI18N
         Tenedor1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/4.png"))); // NOI18N
+        Tenedor1.setText("Disponible");
         getContentPane().add(Tenedor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, -1));
 
         Tenedor2.setFont(new java.awt.Font("Yaahowu", 1, 12)); // NOI18N
         Tenedor2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/4.png"))); // NOI18N
+        Tenedor2.setText("Disponible");
         getContentPane().add(Tenedor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, -1, -1));
 
         Tenedor3.setFont(new java.awt.Font("Yaahowu", 1, 12)); // NOI18N
         Tenedor3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/4.png"))); // NOI18N
+        Tenedor3.setText("Disponible");
         getContentPane().add(Tenedor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, -1, -1));
 
         Tenedor4.setFont(new java.awt.Font("Yaahowu", 1, 12)); // NOI18N
         Tenedor4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/4.png"))); // NOI18N
+        Tenedor4.setText("Disponible");
         getContentPane().add(Tenedor4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 490, -1, -1));
 
         Tenedor5.setFont(new java.awt.Font("Yaahowu", 1, 12)); // NOI18N
         Tenedor5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/4.png"))); // NOI18N
+        Tenedor5.setText("Disponible");
         getContentPane().add(Tenedor5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, -1, -1));
 
         IniciarT.setBackground(new java.awt.Color(153, 153, 255));
